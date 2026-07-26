@@ -1,0 +1,35 @@
+Optimización de rendimiento — PVIII
+🔴 Problema inicial
+"Todo PVIII tarda y tiene picos." La lentitud no estaba en un endpoint, sino en cosas que corrían en cada request, más una BD remota (MXMEXDB223) con muchos round-trips.
+
+✅ Cambios aplicados
+1. Logging (causa de los "picos")
+FileLogger.cs: reescrito de escritura síncrona con lock global → cola en memoria + hilo escritor (no bloquea requests).
+FileLoggerProvider.cs: respeta nivel mínimo.
+appsettings.json: nivel de log Information → Warning (deja de escribir cada query SQL a disco; conserva el log de requests).
+Program.cs: FileLoggerProvider(LogLevel.Information).
+2. Autenticación / Claims (latencia en cada request)
+P8ClaimsTransformer.cs: agregado guard p8_tx (evita re-ejecución múltiple por request) + IMemoryCache (10 min por usuario) + consolidé 3 consultas a PviiiCatColabs en 1.
+Program.cs: AddMemoryCache().
+3. Contexto EF
+Program.cs: AddDbContext → AddPooledDbContextFactory + contexto scoped desde el factory (pooling + factory para lecturas en paralelo).
+4. Lecturas de ApprovalsBL.cs
+AsNoTracking() en todas las lecturas (GetAllFiltered, GetApprovalStatus, GetByIdDocumentation, etc.).
+Quitados los .ToLower() sobre columnas (queries SARGable → usan índice).
+Caché de GetAllFiltered con IMemoryCache (TTL 20 s) + invalidación por "generación" al aprobar (Interlocked.Increment).
+5. Pviii.cs → GetProjectDetail (abrir proyecto)
+QueryTrackingBehavior.NoTracking (endpoint de solo lectura).
+Paralelización: las ~18 consultas independientes ahora corren en paralelo con IDbContextFactory + Task.WhenAll (antes eran en serie contra BD remota).
+Eliminadas consultas duplicadas/muertas.
+📊 Resultados (antes → ahora)
+Área	Antes	Ahora
+Picos / congelamientos	sí	eliminados
+Claims (repetido)	multi-seg	2 ms (cacheado)
+Catálogos	lentos + spam SQL	20–70 ms
+Abrir proyecto (detail)	~1400 ms	~750 ms
+Approvals (7 llamadas)	~9 s total	1300 ms + 6×~3 ms
+⏳ Pendiente (opcional)
+Índices en SQL Server (NetworkId, UserEmail, emails de MasterCurrent) — baja el "piso" de detail y la 1ª de Approvals.
+SaveApproval → async (quitar GetAwaiter().GetResult()).
+Compiled model (dotnet ef dbcontext optimize) — arranque frío de ~10–13 s → ~2–3 s.
+Frontend: reducir las 7 llamadas a Approvals por carga.

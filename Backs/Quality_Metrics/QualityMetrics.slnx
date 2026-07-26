@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="API/API.csproj" />
+  <Project Path="BL/BL.csproj" />
+  <Project Path="DL/DL.csproj" />
+  <Project Path="ML/ML.csproj" />
+</Solution>

@@ -1,0 +1,687 @@
+@api = http://localhost:3000/api
+//http://mxmexapp295:3000/api
+
+//////////////////////selects de dimensiones//////////////////////
+### select 
+{{api}}/EMT_dim_AssignationReason
+### select 
+{{api}}/EMT_dim_AssignmentType
+### select 
+{{api}}/EMT_dim_FiscalYear
+### select 
+{{api}}/EMT_dim_IndepenceRisk
+### select 
+{{api}}/EMT_dim_SSRequiered
+### select 
+{{api}}/EMT_dim_AssignmentType
+### select 
+{{api}}/EMT_dim_SectorType
+### select 
+{{api}}/EMT_dim_SectorType/Parent
+### select 
+{{api}}/EMT_dim_BU
+### select 
+{{api}}/EMT_dim_BU/BU
+### select 
+{{api}}/EMT_dim_BU/Segment
+### select 
+{{api}}/EMT_dim_BU/Office
+### select 
+{{api}}/EMT_tbl_AssignmentsGenerated/GetAssigmentsGenerated
+
+
+
+//////////////////////agregar a dimensiones//////////////////////
+### insert
+POST {{api}}/EMT_dim_AssignationReason
+Content-Type: application/json
+
+{
+    "EMT_Reason_Desc": "Prueba"
+}
+
+### insert
+POST {{api}}/EMT_dim_AssignmentType
+Content-Type: application/json
+
+{
+    "EMT_Assignment_Desc": "Prueba"
+}
+
+### insert
+POST {{api}}/EMT_dim_FiscalYear
+Content-Type: application/json
+
+{
+    "EMT_FY_Desc": "3026"
+}
+
+### insert
+POST {{api}}/EMT_dim_IndepenceRisk
+Content-Type: application/json
+
+{
+    "EMT_Indepence_Desc": "Prueba"
+}
+
+### insert
+POST {{api}}/EMT_dim_SSRequiered
+Content-Type: application/json
+
+{
+    "EMT_SSRequi_Desc": "SS"
+}
+
+### insert
+POST {{api}}/EMT_dim_BU
+Content-Type: application/json
+
+{
+    "BU_ID": 1,
+    "BU_Desc": "CIM",
+    "Segment_ID": "1101",
+    "Segment_Desc": "Neo México",
+    "Office_ID": "8301",
+    "Office_Desc": "México",
+    "CostCenter": 500656,
+    "CostCenterDescrip": "MyPriv",
+    "Email_Address_Business_PIC": "ese@ese.com"
+}
+
+
+//////////////////////editar a dimensiones//////////////////////
+### update
+PUT {{api}}/EMT_dim_AssignationReason/5
+Content-Type: application/json
+
+{
+    "EMT_Reason_Desc": "Mirala bien",
+    "Is_Current": 0
+}
+
+### update
+PUT {{api}}/EMT_dim_AssignmentType/3
+Content-Type: application/json
+
+{
+    "EMT_Assignment_Desc": "y se lo jala tambien",
+    "Is_Current": 0
+}
+
+### update
+PUT {{api}}/EMT_dim_FiscalYear/15
+Content-Type: application/json
+
+{
+    "EMT_FY_Desc": "2031",
+    "Is_Current": 0
+}
+
+### update
+PUT {{api}}/EMT_dim_IndepenceRisk/5
+Content-Type: application/json
+
+{
+    "EMT_Indepence_Desc": "riesgo",
+    "Is_Current": 0
+}
+
+### update
+PUT {{api}}/EMT_dim_SSRequiered/15
+Content-Type: application/json
+
+{
+    "EMT_SSRequi_Desc": "Seguro social",
+    "Is_Current": 0
+}
+
+### update
+PUT {{api}}/EMT_dim_BU/45
+Content-Type: application/json
+
+{
+    "Is_Current": 0
+}
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////selects de tablas//////////////////////vw_EMT_Actives/:Key_EMT
+### select 
+{{api}}/EMT_tbl_AssignmentsGenerated/GetAssigmentsGenerated
+### select 
+{{api}}/EMT_tbl_ActivesApprovals
+### select 
+{{api}}/EMT_tbl_Credentials
+### select 
+{{api}}/EMT_tbl_CredentialsApprobals
+### select 
+|||{{api}}/EMT_tbl_Form
+### select 
+{{api}}/EMT_tbl_OthersEQCR
+### select 
+{{api}}/EMT_tbl_PICReassigns
+### select
+{{api}}/EMT_tbl_Reappoint
+### select 
+{{api}}/EMT_tbl_Security
+### select
+{{api}}/EMT_tbl_CredentialsGenerated
+### select
+{{api}}/EMT_tbl_ColabsGenerated
+### select
+{{api}}/EMT_tbl_ColabsGenerated/Actives
+### select
+{{api}}/EMT_tbl_CredentialsGenerated/Ready
+### select
+{{api}}/EMT_tbl_ReappointHistoric
+
+
+
+//////////////////////agregar de tablas//////////////////////
+### insert
+POST {{api}}/EMT_tbl_Assignment
+Content-Type: application/json
+
+{
+    "Employee_ID": 52000337,
+    "Entity_ID": 1001974332,
+    "FY": 2027,
+    "Key_EMT_PFY": "316352254889742026",
+    "EMTSSRequi_Desc": "LO ETRATERRETRE",
+    "Year_Appointment": 2027,
+    "EMTReason_ID": 1,
+    "CEAC_ID": 35595,
+    "Engagement_Name": "Test",
+    "LeadPartner_ID": 4589664,
+    "Member_engagement": 1,
+    "Two_Year_Cooling": 1,
+    "Independent": 1,
+    "Ablility_objectivity_integrity": 1,
+    "Has_Threats": 1,
+    "Has_Threats_Desc": "muchaasasas",
+    "EMTSector_ID": 1,
+    "EMTAssignment_ID": 1,
+    "Validated": 0,
+    "Created_By": "yoni"
+}
+### insert 
+POST {{api}}/EMT_tbl_ActivesApprobals
+Content-Type: application/json
+
+{
+  "Key_EMT": "316352254889742027",
+  "PIC": 1,
+  "PIC_Email_Address_Business": "pic@company.com",
+  "PIC_Comment": "Approved by PIC",
+  "PIC_Date": "2026-05-05",
+  "Deputy": 1,
+  "Deputy_Email_Address_Business": "deputy@company.com",
+  "Deputy_Comment": "Reviewed by Deputy",
+  "Deputy_Date": "2026-05-05",
+  "CPPP": 1,
+  "CPPP_Email_Address_Business": "cppp@company.com",
+  "CPPP_Comment": "Final approval",
+  "CPPP_Date": "2026-05-05",
+  "Created_By": "emendezhernandez"
+}
+### insert 
+POST {{api}}/EMT_tbl_Credentials
+Content-Type: application/json
+
+{
+  "Is_Firm_Member": 1,
+  "Employee_ID": 52006559,
+  "Is_Assistant": 0,
+  "Understanding_Responsabilities": 1,
+  "NC_Evaluation": "Satisfactory",
+  "PCAOB_Inspection_Results": "No findings",
+  "Indepence_Desc": "bailando",
+  "Specific_Training": "Audit Quality Training",
+  "Indutry_Experience": "Financial Services",
+  "Created_By": "emendezhernandez"
+}
+### insert 
+POST {{api}}/EMT_tbl_Credentials/delete
+Content-Type: application/json
+
+{
+  "Employee_ID": 52010530,
+  "Created_By": "emendezhernandez"
+}
+### insert 
+POST {{api}}/EMT_tbl_CredentialsApprobals
+Content-Type: application/json
+
+{
+  "Employee_ID": 123445545,
+  "Approve_Level": "Deputy",
+  "Approve_Status": 1,
+  "Approve_Email_Address_Business": "deputy@company.com",
+  "Approve_Comment": "Approved without comments",
+  "Created_By": "emendezhernandez@kpmg.com.mx"
+}
+### insert 
+POST {{api}}/EMT_tbl_Form
+Content-Type: application/json
+
+{
+  "EMTType_ID": 1,
+  "EMTSector_ID": 2,
+  "Key_EMT": "316352254889742027",
+  "Year_Appointment": 2027,
+  "Criteria_A": true,
+  "Criteria_A_Comments": "Cumple con el criterio A",
+  "Criteria_B": true,
+  "Criteria_B_Comments": "Cumple con el criterio B",
+  "Perfomance_Requirements": true,
+  "Perfomance_Requirements_Comments": "Buen desempeño",
+  "Documentation_Requirements": true,
+  "Documentation_Requirements_Comments": "Documentación completa",
+  "Assistant": false,
+  "Conduct_Requirements": true,
+  "Conduct_Requirements_Comments": "Conducta adecuada",
+  "Validated": true,
+  "Created_By": "emendezhernandez"
+}
+### insert 
+POST {{api}}/EMT_tbl_OthersEQCR
+Content-Type: application/json
+
+{
+  "First_Name": "Nombre1",
+  "Last_Name": "Apellido1",
+  "Email_Address_Business": "otro@correo1",
+  "Location_Name": "Metsico",
+  "Local_Job_Level_Name": "Partner",
+  "Years_In_Role": 2021,
+  "Area_From": "advisorý",
+  "Created_By": "yonas"
+}
+### insert 
+POST {{api}}/EMT_tbl_PICReassigns
+Content-Type: application/json
+
+{
+  "Key_EMT": "316352254889742027",
+  "Employee_ID": 12345,
+  "Comments": "Reassign PIC due to workload balance",
+  "Created_By": "emendezhernandez"
+}
+### insert 
+POST {{api}}/EMT_tbl_Reappoint
+Content-Type: application/json
+
+{
+  "Employee_ID": 12345,
+  "Entity_ID": 200000000000001,
+  "FY": 2026,
+  "Key_EMT_PFY": "123452000000000000012025",
+  "CEAC_ID": 10,
+  "Engagement_Name": "ACME Group - Statutory Audit",
+  "LeadPartner_ID": 67890,
+  "Year_Appointment": 2025,
+  "Year_Reappointment": 2026,
+  "Competence_Capabilities": 1,
+  "No_Significant_Changes_Initial": 1,
+  "No_significan_Changes_Legal_Regulatory": 1,
+  "No_changes_entitys_Industry": 1,
+  "No_changes_Complexity": 1,
+  "Sufficient_time": 1,
+  "Independent": 1,
+  "Ablility_objectivity_integrity": 1,
+  "Member_engagement": 1,
+  "Two_Year_Cooling": 0,
+  "Has_Threats": 0,
+  "Has_Threats_Desc": "muchas",
+  "No_responsibility": 1,
+  "NC_Impact_Eval": "1",
+	"PCAOB_Results": 1,
+  "EMTSSRequi_Desc": "LA REVOLUCIOOOOOOON",
+  "EMTAssignment_ID": 2,
+  "EMTSector_ID": 2,
+  "Validated": 0,
+  "Created_By": "emendezhernandez"
+}
+### insert 
+POST {{api}}/EMT_tbl_Security
+Content-Type: application/json
+
+{
+  "Email_Address_Business": "agonzalezchavez@kpmg.com.mx",
+  "Full_Name": "Abigail Gonzalez",
+  "Role_ID": 11,
+  "Role_Desc": "Bussness Inteligence",
+  "BU": "Mexico",
+  "Role_Desc": "Algo",
+  "BU_ID": 1,
+  "BU_Desc": "Algo",
+  "Segment_ID": 1,
+  "Segment_Desc": "algo",
+  "Office_ID": 1,
+  "Office_Desc": "algo"
+}
+### insert
+POST {{api}}/EMT_tbl_CredentialsGenerated
+Content-Type: application/json
+
+{
+  "Employee_ID": 123456,
+  "Full_Name": "Erik Mendez",
+  "Local_Job_Level_Name": "Senior",
+  "Is_Firm_Member": true,
+  "Is_Assistant": false,
+  "Years_In_Role": 2.5,
+  "BU": "Mexico",
+  "Location_Name": "CDMX",
+  "Understanding_Responsabilities": true,
+  "AICPA": 3.0,
+  "PCAOB": 2.5,
+  "ICFR": 3.5,
+  "SEC": 2.8,
+  "IFRS": 3.2,
+  "USGAAP": 3.0,
+  "Specific_Training": "Training en auditoría avanzada",
+  "Indutry_Experience": "Experiencia en sector financiero",
+  "QPR1": "A",
+  "QPR2": "B",
+  "QPR3": "A",
+  "NC_Evaluation": "Buen desempeño general",
+  "PCAOB_Inspection_Results": "Sin observaciones",
+  "EMT_Indepence_ID": 1,
+  "EMT_Indepence_Desc": "Compliant",
+  "Created_By": "emendezhernandez@kpmg.com.mx"
+}
+### insert
+POST {{api}}/EMT_tbl_ColabsGenerated
+Content-Type: application/json
+
+{
+  "Employee_ID": 12345678,
+  "Full_Name": "Juan Perez",
+  "Local_Job_Level_Name": "Senior Associate",
+  "Local_Job_Level_ID": 5,
+  "Email_Address_Business": "juan.perez@correo.com",
+  "Years_In_Role": 12.5,
+  "Location_Name": "Mexico City",
+  "AICPA": 1.5,
+  "PCAOB": 2.0,
+  "ICFR": 1.2,
+  "SEC": 0.8,
+  "IFRS": 1.0,
+  "USGAAP": 1.7,
+  "QPR1": "A",
+  "QPR2": "B",
+  "QPR3": "A",
+  "Estatus_ID": 1,
+  "Created_By": "emendez"
+}
+### insert
+POST {{api}}/EMT_tbl_Form
+Content-Type: application/json
+
+{
+  "EMT_Type_PK": 1,
+  "Key_EMT": "EMT-002",
+  "Employee_ID": 12345,
+  "Full_Name": "Erik Mendez",
+  "Email_Address_Business": "erik.mendez@kpmg.com.mx",
+  "Local_Job_Level_Name": "Manager",
+  "BU": "Audit",
+  "Office": "Mexico City",
+  "Entity_ID": 1001,
+  "Entity_Name": "Cliente Demo2",
+  "Year_Appointment": 2026,
+  "Criteria_A": 1,
+  "Criteria_A_Comments": "Cumple criterio A",
+  "Criteria_B": 1,
+  "Criteria_B_Comments": "Cumple criterio B",
+  "Perfomance_Requirements": 1,
+  "Perfomance_Requirements_Comments": "Performance OK",
+  "Documentation_Requirements": 1,
+  "Documentation_Requirements_Comments": "Documentación completa",
+  "Assistant": 0,
+  "Conduct_Requirements": 1,
+  "Conduct_Requirements_Comments": "Conducta adecuada",
+  "Ready_to_Approve": 0,
+  "Created_By": "erik.mendez@kpmg.com.mx"
+
+}
+//////////////////////select especifico de tablas//////////////////////
+### select por PK
+{{api}}/EMT_tbl_Assignment/1
+### select por PK
+{{api}}/EMT_tbl_ActivesApprobals/1
+### select por PK
+{{api}}/EMT_tbl_Credentials/1
+### select por PK
+{{api}}/EMT_tbl_CredentialsApprobals/1
+### select por PK
+{{api}}/EMT_tbl_Form/2
+### select por PK
+{{api}}/EMT_tbl_OthersEQCR/7000000
+### select por PK
+{{api}}/EMT_tbl_PICReassigns/1
+### select por PK
+{{api}}/EMT_tbl_Reappoint/3
+### select por Email
+{{api}}/EMT_tbl_Security/emendezhernandez@kpmg.com.mx
+### select por employee_ID
+{{api}}/EMT_tbl_CredentialsGenerated/52001321
+### select por employee_ID
+{{api}}/EMT_tbl_ColabsGenerated/12345678
+
+
+//////////////////////cambiar vigencia de tablas//////////////////////
+### update por PK
+PUT {{api}}/EMT_tbl_Assignment/1
+Content-Type: application/json
+
+{
+  "Is_Current": 0,
+  "Modified_By": "emendezhernandez"
+}
+
+### update por PK
+PUT {{api}}/EMT_tbl_ActivesApprobals/1
+Content-Type: application/json
+
+{
+  "Is_Current": 0,
+  "Modified_By": "emendezhernandez"
+}
+### update por PK
+PUT {{api}}/EMT_tbl_Credentials/1
+Content-Type: application/json
+
+{
+    "Is_Current": 1,
+    "Modified_By": "emendezhernandsssez"
+}
+### update por PK
+PUT {{api}}/EMT_tbl_CredentialsApprobals/1
+Content-Type: application/json
+
+{
+    "Is_Current": 0,
+    "Modified_By": "emendezhernandsssez"
+}
+### update por PK
+PUT {{api}}/EMT_tbl_Form/2
+Content-Type: application/json
+
+{
+  "Is_Current": 0,
+  "Modified_By": "emendezhernandez"
+}
+### update por PK
+PUT {{api}}/EMT_tbl_OthersEQCR/7000000
+Content-Type: application/json
+
+{
+  "Is_Current": 0,
+  "Modified_By": "emendezhernandez"
+}
+### update por PK
+PUT {{api}}/EMT_tbl_PICReassigns/1
+Content-Type: application/json
+
+{
+  "Is_Current": 1,
+  "Modified_By": "emendezhernandez"
+}
+### update por PK
+PUT {{api}}/EMT_tbl_Reappoint/3
+Content-Type: application/json
+
+{
+  "Is_Current": 1,
+  "Modified_By": "emendezhernandez"
+}
+### update por PK
+PUT {{api}}/EMT_tbl_Security/1
+Content-Type: application/json
+
+{
+  "Email_Address_Business": "emendezhernandez@kpmg.com.mx",
+  "Full_Name": "Erik Mendez",
+  "Role_ID": 666,
+  "Role_Description": "ALL",
+  "BU": "Bussniess Inteligence"
+}
+### update por employee_id
+PUT {{api}}/EMT_tbl_CredentialsGenerated/52001321
+Content-Type: application/json
+
+{
+  "Full_Name": "el mas cabron de kpmg",
+  "Local_Job_Level_Name": "Manager",
+  "Is_Firm_Member": true,
+  "Is_Assistant": false,
+  "Years_In_Role": 3.0,
+  "BU": "Mexico",
+  "Location_Name": "CDMX",
+  "Understanding_Responsabilities": true,
+  "AICPA": 3.2,
+  "PCAOB": 2.7,
+  "ICFR": 3.6,
+  "SEC": 2.9,
+  "IFRS": 3.3,
+  "USGAAP": 3.1,
+  "Specific_Training": "Updated training",
+  "Indutry_Experience": "Updated experience",
+  "QPR1": "A",
+  "QPR2": "A",
+  "QPR3": "A",
+  "NC_Evaluation": "Excelente desempeño",
+  "PCAOB_Inspection_Results": "Sin issues",
+  "EMT_Indepence_ID": 1,
+  "EMT_Indepence_Desc": "Compliant",
+  "Deputy": false,
+  "CPPP": true,
+  "Deputy_Email_Address_Business": null,
+  "CPPP_Email_Address_Business": "cppp@kpmg.com.mx",
+  "Deputy_Comment": null,
+  "CPPP_Comment": "Assigned",
+  "Status_ID": 1,
+  "Status_Label": "Active",
+  "Modified_By": "emendezhernandez@kpmg.com.mx"
+}
+### aprobacion por employee_id
+Put {{api}}/EMT_tbl_CredentialsGenerated/Approve/52001321
+Content-Type: application/json
+
+{
+  "Approve_Status": 0,
+  "Email_Address_Business": "emendezhernandez@kpmg.com.mx",
+  "Comment": "CPPP Pending"
+}
+### vigencia por employee_id
+PUT {{api}}/EMT_tbl_ColabsGenerated/12345678
+Content-Type: application/json
+
+{
+  "Is_Current": 0,
+  "Modified_By": "emendez"
+}
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////selects vw_EMT_Actives/////////////////////
+### select 
+{{api}}/vw_EMT_Actives
+### select 
+{{api}}/vw_EMT_Actives/5200309954889742027
+### select 
+{{api}}/vw_EMT_Actives/Created_By/yoni
+### select 
+{{api}}/vw_EMT_Actives/BU/CIM
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////selects vw_EMT_Assign/////////////////////
+### select 
+{{api}}/vw_EMT_Assign
+### select 
+{{api}}/vw_EMT_Assign/5200309954889742027
+### select 
+{{api}}/vw_EMT_Assign/Created_By/yoni
+### select 
+{{api}}/vw_EMT_Assign/BU/CIM
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////selects vw_EMT_Reappoint/////////////////////
+### select 
+{{api}}/vw_EMT_Reappoint
+### select 
+{{api}}/vw_EMT_Reappoint/123452000000000000012026
+### select 
+{{api}}/vw_EMT_Reappoint/Created_By/emendezhernandez
+### select 
+{{api}}/vw_EMT_Reappoint/BU/CIM
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////selects vw_EMT_Credencials/////////////////////
+### select 
+{{api}}/vw_EMT_Credencials
+### select 
+{{api}}/vw_EMT_Credencials/52003099
+### select 
+{{api}}/vw_EMT_Credencials/Created_By/emendezhernandez
+### select 
+{{api}}/vw_EMT_Credencials/BU/TMT
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////selects vw_EMT_Colabs/////////////////////
+### select 
+{{api}}/vw_EMT_Colabs
+### select 
+{{api}}/vw_EMT_Colabs/PartnersDirecs
+### select 
+{{api}}/vw_EMT_Colabs/SeniorManagers
+### select 
+{{api}}/vw_EMT_Colabs/Activos
+### select 
+{{api}}/vw_EMT_Colabs/LocalJobName
+### select 
+{{api}}/vw_EMT_Colabs/Employee_ID/52001756
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////selects vw_EMT_Colabs/////////////////////
+### select 
+{{api}}/vw_Entities
+### select 
+{{api}}/vw_Entities/1003838252
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////selects vw_EMT_ReappointHistoric/////////////////////
+### select 
+{{api}}/vw_EMT_ReappointHistoric
+### select 
+{{api}}/vw_EMT_ReappointHistoric/5200033710016422322025

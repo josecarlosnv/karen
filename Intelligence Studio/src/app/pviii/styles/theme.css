@@ -1,0 +1,208 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+  
+  /* KPMG Brand Colors */
+  --kpmg-blue: #00338D;
+  --kpmg-dark-blue: #0C233C;
+  --kpmg-cobalt: #1E49E2;
+  --kpmg-light-blue: #ACEAFF;
+  --kpmg-pacific: #00B8F5;
+  --kpmg-purple: #7213EA;
+  --kpmg-pink: #FD349C;
+  
+  /* Application Colors */
+  --background: #F8F9FB;
+  --foreground: #0C233C;
+  --card: #ffffff;
+  --card-foreground: #0C233C;
+  --popover: #ffffff;
+  --popover-foreground: #0C233C;
+  --primary: #00338D;
+  --primary-foreground: #ffffff;
+  --secondary: #1E49E2;
+  --secondary-foreground: #ffffff;
+  --muted: #E8EBF0;
+  --muted-foreground: #5A6576;
+  --accent: #ACEAFF;
+  --accent-foreground: #0C233C;
+  --destructive: #DC2626;
+  --destructive-foreground: #ffffff;
+  --border: rgba(12, 35, 60, 0.12);
+  --input: transparent;
+  --input-background: #ffffff;
+  --switch-background: #cbd5e1;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --font-weight-semibold: 600;
+  --ring: #00338D;
+  
+  /* Status Colors */
+  --status-draft: #94A3B8;
+  --status-submitted: #00B8F5;
+  --status-approved: #10B981;
+  --status-rejected: #DC2626;
+  --status-pending: #F59E0B;
+  --status-exception: #FD349C;
+  
+  /* Chart Colors */
+  --chart-1: #00338D;
+  --chart-2: #1E49E2;
+  --chart-3: #00B8F5;
+  --chart-4: #7213EA;
+  --chart-5: #FD349C;
+  
+  --radius: 0.75rem;
+  
+  /* Sidebar */
+  --sidebar: #0C233C;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #00338D;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: rgba(255, 255, 255, 0.1);
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-ring: #00B8F5;
+}
+
+.dark {
+  --background: #0C233C;
+  --foreground: #ffffff;
+  --card: #1a2942;
+  --card-foreground: #ffffff;
+  --popover: #1a2942;
+  --popover-foreground: #ffffff;
+  --primary: #00B8F5;
+  --primary-foreground: #0C233C;
+  --secondary: #1E49E2;
+  --secondary-foreground: #ffffff;
+  --muted: #1a2942;
+  --muted-foreground: #94A3B8;
+  --accent: #1a2942;
+  --accent-foreground: #ffffff;
+  --destructive: #DC2626;
+  --destructive-foreground: #ffffff;
+  --border: rgba(255, 255, 255, 0.1);
+  --input: rgba(255, 255, 255, 0.1);
+  --ring: #00B8F5;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  
+  /* KPMG Brand Colors */
+  --color-kpmg-blue: var(--kpmg-blue);
+  --color-kpmg-dark-blue: var(--kpmg-dark-blue);
+  --color-kpmg-cobalt: var(--kpmg-cobalt);
+  --color-kpmg-light-blue: var(--kpmg-light-blue);
+  --color-kpmg-pacific: var(--kpmg-pacific);
+  --color-kpmg-purple: var(--kpmg-purple);
+  --color-kpmg-pink: var(--kpmg-pink);
+  
+  /* Status Colors */
+  --color-status-draft: var(--status-draft);
+  --color-status-submitted: var(--status-submitted);
+  --color-status-approved: var(--status-approved);
+  --color-status-rejected: var(--status-rejected);
+  --color-status-pending: var(--status-pending);
+  --color-status-exception: var(--status-exception);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    font-size: var(--font-size);
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: var(--font-weight-semibold);
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-semibold);
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    font-weight: var(--font-weight-semibold);
+    line-height: 1.4;
+  }
+
+  h4 {
+    font-size: 1rem;
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  label {
+    font-size: 0.875rem;
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  button {
+    font-size: 0.875rem;
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  input {
+    font-size: 0.875rem;
+    font-weight: var(--font-weight-normal);
+    line-height: 1.5;
+  }
+}
