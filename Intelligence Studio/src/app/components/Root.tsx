@@ -209,13 +209,13 @@ function badgeStyle(badge: Product["badge"], theme: "dark" | "light"): React.CSS
   if (theme === "light") {
     switch (badge) {
       case "Live":
-        return { color: "#1E49E2", borderColor: "#1E49E2", background: "#FFFFFF", fontWeight: 600 };
+        return { color: "#4B4B4B", borderColor: "#4B4B4B", background: "#FFFFFF", fontWeight: 600 };
       case "New":
-        return { color: "#1E49E2", borderColor: "rgba(30,73,226,0.35)", background: "#FFFFFF", fontWeight: 600 };
+        return { color: "#4B4B4B", borderColor: "rgba(75, 75, 75, 0.35)", background: "#FFFFFF", fontWeight: 600 };
       case "Beta":
-        return { color: "rgba(0,51,141,0.65)", borderColor: "rgba(0,51,141,0.25)", background: "#FFFFFF", fontWeight: 500 };
+        return { color: "rgba(47, 47, 47, 0.65)", borderColor: "rgba(47, 47, 47, 0.25)", background: "#FFFFFF", fontWeight: 500 };
       case "Coming":
-        return { color: "rgba(0,51,141,0.65)", borderColor: "rgba(0,51,141,0.25)", background: "#FFFFFF", fontWeight: 500 };
+        return { color: "rgba(47, 47, 47, 0.65)", borderColor: "rgba(47, 47, 47, 0.25)", background: "#FFFFFF", fontWeight: 500 };
     }
   }
   // dark mode — existing Tailwind classes handle colors; return empty
@@ -362,9 +362,9 @@ export function Root() {
           className="relative border-b flex items-center justify-center px-12 py-2.5"
           style={{
             backgroundColor:
-              theme === "light" ? "#1E49E2" : "#00338D",
+              theme === "light" ? "#4B4B4B" : "#2F2F2F",
             borderColor:
-              theme === "light" ? "#1E49E2" : "#00338D",
+              theme === "light" ? "#4B4B4B" : "#2F2F2F",
           }}
         >
           <div className="flex items-center gap-4">
@@ -401,18 +401,18 @@ export function Root() {
         style={{
           background:
             theme === "dark"
-              ? "linear-gradient(135deg, rgba(10, 22, 40, 0.75) 0%, rgba(5, 13, 26, 0.65) 100%)"
-              : "rgba(255,255,255,1)",
+              ? "linear-gradient(135deg, rgba(21, 21, 21, 0.75) 0%, rgba(12, 12, 12, 0.65) 100%)"
+              : "rgba(255, 255, 255, 1)",
           backdropFilter: "blur(24px) saturate(180%)",
           WebkitBackdropFilter: "blur(24px) saturate(180%)",
           borderColor:
             theme === "dark"
-              ? "rgba(80, 160, 232, 0.15)"
-              : "rgba(0, 51, 141, 0.08)",
+              ? "rgba(148, 148, 148, 0.15)"
+              : "rgba(47, 47, 47, 0.08)",
           boxShadow:
             theme === "dark"
-              ? "0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(80, 160, 232, 0.1) inset, 0 1px 0 rgba(80, 160, 232, 0.1) inset"
-              : "0 4px 24px rgba(0, 51, 141, 0.06), 0 0 0 1px rgba(0, 94, 184, 0.05) inset",
+              ? "0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(148, 148, 148, 0.1) inset, 0 1px 0 rgba(148, 148, 148, 0.1) inset"
+              : "0 4px 24px rgba(47, 47, 47, 0.06), 0 0 0 1px rgba(81, 81, 81, 0.05) inset",
         }}
       >
         {/* Primary bar */}
@@ -446,15 +446,15 @@ export function Root() {
                 letterSpacing: "0.22em",
                 backgroundImage:
                   theme === "light"
-                    ? "linear-gradient(135deg, #00338d 0%, #005eb8 100%)"
-                    : "linear-gradient(135deg, #50a0e8 0%, #0078d4 100%)",
+                    ? "linear-gradient(135deg, #2F2F2F 0%, #515151 100%)"
+                    : "linear-gradient(135deg, #949494 0%, #656565 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
                 color: "transparent",
                 filter:
                   theme === "dark"
-                    ? "drop-shadow(0 0 8px rgba(0, 120, 212, 0.4))"
+                    ? "drop-shadow(0 0 8px rgba(101, 101, 101, 0.4))"
                     : "none",
               }}
             >
@@ -524,18 +524,18 @@ export function Root() {
           style={{
             background:
               theme === "dark"
-                ? "linear-gradient(135deg, rgba(15, 31, 53, 0.55) 0%, rgba(10, 22, 40, 0.45) 100%)"
-                : "linear-gradient(135deg, rgba(255, 255, 255, 0.60) 0%, rgba(245, 250, 255, 0.50) 100%)",
+                ? "linear-gradient(135deg, rgba(29, 29, 29, 0.55) 0%, rgba(21, 21, 21, 0.45) 100%)"
+                : "linear-gradient(135deg, rgba(255, 255, 255, 0.60) 0%, rgba(249, 249, 249, 0.50) 100%)",
             backdropFilter: "blur(16px) saturate(150%)",
             WebkitBackdropFilter: "blur(16px) saturate(150%)",
             borderColor:
               theme === "dark"
-                ? "rgba(80, 160, 232, 0.12)"
-                : "rgba(0, 51, 141, 0.06)",
+                ? "rgba(148, 148, 148, 0.12)"
+                : "rgba(47, 47, 47, 0.06)",
             boxShadow:
               theme === "dark"
-                ? "0 1px 0 rgba(80, 160, 232, 0.08) inset"
-                : "0 1px 0 rgba(0, 94, 184, 0.04) inset",
+                ? "0 1px 0 rgba(148, 148, 148, 0.08) inset"
+                : "0 1px 0 rgba(81, 81, 81, 0.04) inset",
           }}
         >
           <div className="max-w-[1440px] mx-auto px-8 flex justify-center">
@@ -562,12 +562,12 @@ export function Root() {
                   style={{
                     borderColor: isActive
                       ? theme === "dark"
-                        ? "#0078d4"
-                        : "#005eb8"
+                        ? "#656565"
+                        : "#515151"
                       : "transparent",
                     textShadow:
                       isActive && theme === "dark"
-                        ? "0 0 12px rgba(0, 120, 212, 0.3)"
+                        ? "0 0 12px rgba(101, 101, 101, 0.3)"
                         : "none",
                   }}
                 >
@@ -580,8 +580,8 @@ export function Root() {
                       style={{
                         background:
                           theme === "dark"
-                            ? "linear-gradient(180deg, rgba(0, 120, 212, 0.08) 0%, transparent 100%)"
-                            : "linear-gradient(180deg, rgba(0, 94, 184, 0.04) 0%, transparent 100%)",
+                            ? "linear-gradient(180deg, rgba(101, 101, 101, 0.08) 0%, transparent 100%)"
+                            : "linear-gradient(180deg, rgba(81, 81, 81, 0.04) 0%, transparent 100%)",
                       }}
                     />
                   )}
@@ -601,12 +601,12 @@ export function Root() {
                   style={{
                     borderColor: isActive
                       ? theme === "dark"
-                        ? "#0078d4"
-                        : "#005eb8"
+                        ? "#656565"
+                        : "#515151"
                       : "transparent",
                     textShadow:
                       isActive && theme === "dark"
-                        ? "0 0 12px rgba(0, 120, 212, 0.3)"
+                        ? "0 0 12px rgba(101, 101, 101, 0.3)"
                         : "none",
                   }}
                 >
@@ -619,8 +619,8 @@ export function Root() {
                       style={{
                         background:
                           theme === "dark"
-                            ? "linear-gradient(180deg, rgba(0, 120, 212, 0.08) 0%, transparent 100%)"
-                            : "linear-gradient(180deg, rgba(0, 94, 184, 0.04) 0%, transparent 100%)",
+                            ? "linear-gradient(180deg, rgba(101, 101, 101, 0.08) 0%, transparent 100%)"
+                            : "linear-gradient(180deg, rgba(81, 81, 81, 0.04) 0%, transparent 100%)",
                       }}
                     />
                   )}
@@ -643,8 +643,8 @@ export function Root() {
               WebkitBackdropFilter: "blur(10px) saturate(140%)",
               background:
                 theme === "dark"
-                  ? "rgba(3, 8, 20, 0.80)"
-                  : "rgba(200, 218, 240, 0.50)",
+                  ? "rgba(8, 8, 8, 0.80)"
+                  : "rgba(216, 216, 216, 0.50)",
             }}
           />
 
@@ -654,15 +654,15 @@ export function Root() {
             style={{
               top: announcementClosed ? "104px" : "132px",
               background:
-                theme === "dark" ? "#07111f" : "#FAFBFD",
+                theme === "dark" ? "#101010" : "#FBFBFB",
               borderBottom:
                 theme === "dark"
-                  ? "1px solid rgba(80,160,232,0.08)"
-                  : "1px solid rgba(0,51,141,0.06)",
+                  ? "1px solid rgba(148, 148, 148, 0.08)"
+                  : "1px solid rgba(47, 47, 47, 0.06)",
               boxShadow:
                 theme === "dark"
-                  ? "0 24px 64px rgba(0,0,0,0.70)"
-                  : "0 20px 56px rgba(0, 35, 100, 0.12)",
+                  ? "0 24px 64px rgba(0, 0, 0, 0.70)"
+                  : "0 20px 56px rgba(32, 32, 32, 0.12)",
             }}
           >
             <div
@@ -678,12 +678,12 @@ export function Root() {
                 style={{
                   background:
                     theme === "dark"
-                      ? "linear-gradient(180deg, rgba(4, 16, 40, 0.80) 0%, rgba(4, 12, 30, 0.60) 100%)"
-                      : "#F7F9FC",
+                      ? "linear-gradient(180deg, rgba(15, 15, 15, 0.80) 0%, rgba(12, 12, 12, 0.60) 100%)"
+                      : "#F9F9F9",
                   borderRight:
                     theme === "dark"
-                      ? "1px solid rgba(80,160,232,0.08)"
-                      : "1px solid rgba(0,51,141,0.06)",
+                      ? "1px solid rgba(148, 148, 148, 0.08)"
+                      : "1px solid rgba(47, 47, 47, 0.06)",
                 }}
               >
                 <nav className="flex-1 space-y-0.5">
@@ -699,12 +699,12 @@ export function Root() {
                         style={{
                           borderRadius: "5px",
                           borderLeft: isSelected
-                            ? "2px solid #1E49E2"
+                            ? "2px solid #4B4B4B"
                             : "2px solid transparent",
                           background: isSelected
                             ? theme === "dark"
-                              ? "rgba(30, 73, 226, 0.14)"
-                              : "rgba(30, 73, 226, 0.07)"
+                              ? "rgba(75, 75, 75, 0.14)"
+                              : "rgba(75, 75, 75, 0.07)"
                             : "transparent",
                         }}
                       >
@@ -717,11 +717,11 @@ export function Root() {
                               fontWeight: 500,
                               color: isSelected
                                 ? theme === "dark"
-                                  ? "rgba(100,170,255,0.65)"
-                                  : "#1E49E2"
+                                  ? "rgba(161, 161, 161, 0.65)"
+                                  : "#4B4B4B"
                                 : theme === "dark"
-                                  ? "rgba(255,255,255,0.20)"
-                                  : "rgba(0,51,141,0.55)",
+                                  ? "rgba(255, 255, 255, 0.20)"
+                                  : "rgba(47, 47, 47, 0.55)",
                             }}
                           >
                             0{i + 1}
@@ -736,11 +736,11 @@ export function Root() {
                                 : 500,
                               color: isSelected
                                 ? theme === "dark"
-                                  ? "#e8f0ff"
-                                  : "#1E49E2"
+                                  ? "#EFEFEF"
+                                  : "#4B4B4B"
                                 : theme === "dark"
-                                  ? "rgba(255,255,255,0.45)"
-                                  : "rgba(0,51,141,0.62)",
+                                  ? "rgba(255, 255, 255, 0.45)"
+                                  : "rgba(47, 47, 47, 0.62)",
                             }}
                           >
                             {
@@ -757,8 +757,8 @@ export function Root() {
                             transition: "opacity 0.15s",
                             color:
                               theme === "dark"
-                                ? "rgba(100,170,255,0.55)"
-                                : "#1E49E2",
+                                ? "rgba(161, 161, 161, 0.55)"
+                                : "#4B4B4B",
                           }}
                         />
                       </button>
@@ -782,8 +782,8 @@ export function Root() {
                           fontFamily: "var(--font-mono)",
                           color:
                             theme === "dark"
-                              ? "rgba(100,160,240,0.55)"
-                              : "rgba(0,51,141,0.45)",
+                              ? "rgba(153, 153, 153, 0.55)"
+                              : "rgba(47, 47, 47, 0.45)",
                         }}
                       >
                         Analytical Perspectives
@@ -795,8 +795,8 @@ export function Root() {
                           fontWeight: 600,
                           color:
                             theme === "dark"
-                              ? "rgba(220,235,255,0.88)"
-                              : "rgba(0,51,141,0.85)"
+                              ? "rgba(233, 233, 233, 0.88)"
+                              : "rgba(47, 47, 47, 0.85)"
                         }}
                       >
                         Business questions answered with data.
@@ -807,8 +807,8 @@ export function Root() {
                           fontFamily: "var(--font-sans)",
                           color:
                             theme === "dark"
-                              ? "rgba(180,205,240,0.50)"
-                              : "rgba(0,51,141,0.55)",
+                              ? "rgba(202, 202, 202, 0.50)"
+                              : "rgba(47, 47, 47, 0.55)",
                         }}
                       >
                         Transform business questions into structured, data-driven insights. This suite focuses on investigations, deep dives and analytical studies that help leaders understand operational challenges, identify opportunities and support decision-making.
@@ -820,8 +820,8 @@ export function Root() {
                       style={{
                         borderTop:
                           theme === "dark"
-                            ? "1px solid rgba(80,160,232,0.08)"
-                            : "1px solid rgba(0,51,141,0.06)",
+                            ? "1px solid rgba(148, 148, 148, 0.08)"
+                            : "1px solid rgba(47, 47, 47, 0.06)",
                       }}
                     >
                       <p
@@ -830,8 +830,8 @@ export function Root() {
                           fontFamily: "var(--font-mono)",
                           color:
                             theme === "dark"
-                              ? "rgba(100,160,240,0.40)"
-                              : "rgba(0,51,141,0.38)",
+                              ? "rgba(153, 153, 153, 0.40)"
+                              : "rgba(47, 47, 47, 0.38)",
                         }}
                       >
                         Areas of Focus
@@ -851,8 +851,8 @@ export function Root() {
                               style={{
                                 background:
                                   theme === "dark"
-                                    ? "rgba(100,160,240,0.40)"
-                                    : "rgba(0,51,141,0.30)",
+                                    ? "rgba(153, 153, 153, 0.40)"
+                                    : "rgba(47, 47, 47, 0.30)",
                               }}
                             />
                             <span
@@ -861,8 +861,8 @@ export function Root() {
                                 fontFamily: "var(--font-sans)",
                                 color:
                                   theme === "dark"
-                                    ? "rgba(180,205,240,0.55)"
-                                    : "rgba(0,51,141,0.62)",
+                                    ? "rgba(202, 202, 202, 0.55)"
+                                    : "rgba(47, 47, 47, 0.62)",
                               }}
                             >
                               {area}
@@ -889,44 +889,44 @@ export function Root() {
                         borderRadius: "6px",
                         background:
                           theme === "dark"
-                            ? "rgba(255,255,255,0.03)"
-                            : "#ffffff",
+                            ? "rgba(255, 255, 255, 0.03)"
+                            : "#FFFFFF",
                         border:
                           theme === "dark"
-                            ? "1px solid rgba(80,160,232,0.08)"
-                            : "1px solid rgba(0,51,141,0.06)",
+                            ? "1px solid rgba(148, 148, 148, 0.08)"
+                            : "1px solid rgba(47, 47, 47, 0.06)",
                         boxShadow:
                           theme === "dark"
                             ? "none"
-                            : "0 1px 4px rgba(0, 40, 120, 0.06)",
+                            : "0 1px 4px rgba(37, 37, 37, 0.06)",
                       }}
                       onMouseEnter={(e) => {
                         e.currentTarget.style.background =
                           theme === "dark"
-                            ? "rgba(30, 73, 226, 0.10)"
-                            : "#F4F7FF";
+                            ? "rgba(75, 75, 75, 0.10)"
+                            : "#F7F7F7";
                         e.currentTarget.style.borderColor =
                           theme === "dark"
-                            ? "rgba(80, 150, 255, 0.28)"
-                            : "rgba(0,51,141,0.18)";
+                            ? "rgba(143, 143, 143, 0.28)"
+                            : "rgba(47, 47, 47, 0.18)";
                         e.currentTarget.style.boxShadow =
                           theme === "dark"
-                            ? "0 0 0 1px rgba(80,150,255,0.18) inset, 0 4px 16px rgba(0, 60, 200, 0.14)"
-                            : "0 2px 12px rgba(0, 51, 141, 0.10)";
+                            ? "0 0 0 1px rgba(143, 143, 143, 0.18) inset, 0 4px 16px rgba(57, 57, 57, 0.14)"
+                            : "0 2px 12px rgba(47, 47, 47, 0.10)";
                       }}
                       onMouseLeave={(e) => {
                         e.currentTarget.style.background =
                           theme === "dark"
-                            ? "rgba(255,255,255,0.03)"
-                            : "#ffffff";
+                            ? "rgba(255, 255, 255, 0.03)"
+                            : "#FFFFFF";
                         e.currentTarget.style.borderColor =
                           theme === "dark"
-                            ? "rgba(80,160,232,0.08)"
-                            : "rgba(0,51,141,0.06)";
+                            ? "rgba(148, 148, 148, 0.08)"
+                            : "rgba(47, 47, 47, 0.06)";
                         e.currentTarget.style.boxShadow =
                           theme === "dark"
                             ? "none"
-                            : "0 1px 4px rgba(0, 40, 120, 0.06)";
+                            : "0 1px 4px rgba(37, 37, 37, 0.06)";
                       }}
                     >
                       <div className="flex items-start justify-between mb-1.5">
@@ -938,8 +938,8 @@ export function Root() {
                             fontWeight: 500,
                             color:
                               theme === "dark"
-                                ? "rgba(220,235,255,0.75)"
-                                : "rgba(0,51,141,0.85)",
+                                ? "rgba(233, 233, 233, 0.75)"
+                                : "rgba(47, 47, 47, 0.85)",
                           }}
                         >
                           {product.name}
@@ -961,8 +961,8 @@ export function Root() {
                             "'IBM Plex Sans', sans-serif",
                           color:
                             theme === "dark"
-                              ? "rgba(100, 160, 240, 0.35)"
-                              : "rgba(0,51,141,0.55)",
+                              ? "rgba(153, 153, 153, 0.35)"
+                              : "rgba(47, 47, 47, 0.55)",
                         }}
                       >
                         {product.category}
@@ -983,8 +983,8 @@ export function Root() {
                       fontFamily: "'IBM Plex Sans', sans-serif",
                       color:
                         theme === "dark"
-                          ? "rgba(100, 180, 255, 0.65)"
-                          : "#1E49E2",
+                          ? "rgba(168, 168, 168, 0.65)"
+                          : "#4B4B4B",
                     }}
                   >
                     {t.enterSuite}
@@ -995,8 +995,8 @@ export function Root() {
                     style={{
                       color:
                         theme === "dark"
-                          ? "rgba(100, 180, 255, 0.55)"
-                          : "#1E49E2",
+                          ? "rgba(168, 168, 168, 0.55)"
+                          : "#4B4B4B",
                     }}
                   />
                 </button>
@@ -1033,8 +1033,8 @@ export function Root() {
         width: theme === "dark" ? "82px" : "56px",
         background:
           theme === "dark"
-            ? "linear-gradient(to right, #07111f 0%, rgba(7,17,31,0.92) 18%, rgba(7,17,31,0.55) 45%, rgba(7,17,31,0) 100%)"
-            : "linear-gradient(to right, rgba(250,251,253,0.55) 0%, rgba(250,251,253,0.25) 40%, rgba(250,251,253,0) 100%)",
+            ? "linear-gradient(to right, #101010 0%, rgba(16, 16, 16, 0.92) 18%, rgba(16, 16, 16, 0.55) 45%, rgba(16, 16, 16, 0) 100%)"
+            : "linear-gradient(to right, rgba(251, 251, 251, 0.55) 0%, rgba(251, 251, 251, 0.25) 40%, rgba(251, 251, 251, 0) 100%)",
       }}
     />
   </div>
@@ -1046,8 +1046,8 @@ export function Root() {
       height: "55%",
       background:
         theme === "dark"
-          ? "linear-gradient(0deg, rgba(7,17,31,0.82) 0%, rgba(7,17,31,0.45) 55%, transparent 100%)"
-          : "linear-gradient(0deg, rgba(8,22,52,0.58) 0%, rgba(8,22,52,0.20) 55%, transparent 100%)",
+          ? "linear-gradient(0deg, rgba(16, 16, 16, 0.82) 0%, rgba(16, 16, 16, 0.45) 55%, transparent 100%)"
+          : "linear-gradient(0deg, rgba(21, 21, 21, 0.58) 0%, rgba(21, 21, 21, 0.20) 55%, transparent 100%)",
     }}
   />
 
@@ -1057,7 +1057,7 @@ export function Root() {
       className="text-[10px] tracking-[0.14em] uppercase mb-2"
       style={{
         fontFamily: "'IBM Plex Mono', monospace",
-        color: "rgba(255,255,255,0.45)",
+        color: "rgba(255, 255, 255, 0.45)",
       }}
     >
       {t.suiteSpotlight}
@@ -1067,7 +1067,7 @@ export function Root() {
       style={{
         fontFamily: "'IBM Plex Sans', sans-serif",
         fontWeight: 600,
-        color: "rgba(255,255,255,0.92)",
+        color: "rgba(255, 255, 255, 0.92)",
       }}
     >
       {t.suites[activeSuiteData.id as keyof typeof t.suites].name}
@@ -1077,7 +1077,7 @@ export function Root() {
       style={{
         fontFamily: "'IBM Plex Sans', sans-serif",
         fontWeight: 400,
-        color: "rgba(255,255,255,0.55)",
+        color: "rgba(255, 255, 255, 0.55)",
       }}
     >
       {t.suites[activeSuiteData.id as keyof typeof t.suites].tagline}
